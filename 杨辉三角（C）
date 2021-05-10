@@ -1,0 +1,18 @@
+#include <stdio.h>
+long Tri(int r, int c) //杨辉三角算法函数	   
+{
+	return (c == 1 || c == r) ? 1 : Tri( r - 1, c - 1 ) + Tri( r - 1, c ); 
+}	
+int main() 
+{
+    int i, j, n; 
+	printf("请输入杨辉三角形的行数（1 ~ 20）：");
+	scanf("%d", &n);
+    for( i = 1; i <= n; i++)	// 输出n行
+    {
+        for( j = 1; j <= i; j++)
+            printf("%6d", Tri(i, j));	//计算并输出杨辉三角形	
+        printf("\n");
+    }
+	return 0;
+}
